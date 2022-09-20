@@ -1,2 +1,1 @@
-# alx-higher_level_programming
-python lessons
+0x01. Python - if/else, loops, functions
