@@ -43,4 +43,3 @@ if __name__ == "__main__":
         "/": my_div
     }
     options.get(op, not_found)()
-    
