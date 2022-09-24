@@ -19,4 +19,3 @@ if __name__ == '__main__':
         print("{} {} {} = {}".format(a, operator, b, mul(a, b)))
     elif operator == '/':
         print("{} {} {} = {}".format(a, operator, b, div(a, b)))
-        
