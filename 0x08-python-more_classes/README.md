@@ -1,2 +1,2 @@
 alx-higher_level_programming
-0x08. Python - More Classes and Objects
+0x0A. Python - Inheritance
