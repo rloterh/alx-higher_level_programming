@@ -1,21 +1,15 @@
 #!/usr/bin/python3
-"""Module for file input/output"""
-
+"""Add all arguments to a Python list and save them to a file."""
 import sys
-import os.path
 
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-write_file = __import__('1-write_file').write_file
+if __name__ == "__main__":
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    load_from_json_file = \
+        __import__('6-load_from_json_file').load_from_json_file
 
-name_file = "add_item.json"
-
-if not os.path.exists(name_file):
-    write_file(name_file, "[]")
-
-new_list = load_from_json_file(name_file)
-argc = len(sys.argv)
-for i in range(1, argc):
-    new_list += [sys.argv[i]]
-
-save_to_json_file(new_list, name_file)
+    try:
+        items = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        items = []
+    items.extend(sys.argv[1:])
+    save_to_json_file(items, "add_item.json")
