@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-def add_attribute(obj, a, v):
-    res = getattr(obj, "__doc__", None)
-    if res is None:
-        setattr(obj, a, v)
+"""this module inserts a new attribute"""
+
+
+def add_attribute(cls, name, value):
+    """adds attribute to the dict"""
+    if hasattr(cls, "__dict__"):
+        cls.__setattr__(name, value)
     else:
         raise TypeError("can't add new attribute")
