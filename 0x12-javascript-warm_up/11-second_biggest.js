@@ -1,12 +1,19 @@
 #!/usr/bin/node
-let args = process.argv.slice(2).map((x) => {
-  return parseInt(x);
-});
-
-if (args.length <= 1) {
-  console.log(0);
+const args = process.argv;
+let largest = 0;
+let next = 0;
+let num;
+if (args.length < 4) {
+  console.log('0');
 } else {
-  console.log(args.sort((a, b) => {
-    return b - a;
-  })[1]);
+  for (let i = 2; i < args.length; i++) {
+    num = Number(args[i]);
+    if (num > largest) {
+      next = largest;
+      largest = num;
+    } else if (num > next) {
+      next = num;
+    }
+  }
+  console.log(next);
 }
