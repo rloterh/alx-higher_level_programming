@@ -3,7 +3,7 @@
 import urllib.request as lib
 
 if __name__ == '__main__':
-    with lib.urlopen('https://intranet.hbtn.io/status') as response:
+    with lib.urlopen('https://alx-intranet.hbtn.io/status') as response:
         view = response.read()
 print("Body response:")
 print("\t- type: {}".format(type(view)))
