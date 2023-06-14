@@ -10,5 +10,6 @@ for line in sys.stdin:
     line = line.strip()
     words = line.split()
     
+
     if count_line % 10 == 0:
         print(f"File size: {total_size}")
