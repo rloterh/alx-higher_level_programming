@@ -1,19 +1,29 @@
 #include "lists.h"
-#include <stdio.h>
 
+/**
+ * check_cycle - check for cycle in singly linked list
+ * @list: a pointer to a space in memory where the linked list is
+ * stored
+ *
+ * Return: 0 if there is no cycle, 1 if there is a cycle
+ */
 int check_cycle(listint_t *list)
 {
-	const listint_t *t, *h;
+	listint_t *slow, *fast;
 
-	t = list;
-	h = list;
+	slow = fast = list;
 
-	while (t && h && h->next)
+	if (list == NULL)
+		return (0);
+
+	while (slow && fast && fast->next)
 	{
-		t = t->next;
-		h = h->next->next;
-		if (t == h)
+		slow = slow->next;
+		fast = fast->next->next;
+
+		if (slow == fast)
 			return (1);
 	}
+
 	return (0);
 }
